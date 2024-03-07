@@ -20,7 +20,7 @@
 # DEALINGS IN THE SOFTWARE.
 
 # Modifications made by Levi Pereira (https://forums.developer.nvidia.com/u/levi_pereira/activity):
-#  - Customized on nvdsinfer_custombboxparser.cpp  by creating the nvdsinfer_yolov9_efficient_nms.cpp
+#  - Customized on nvdsinfer_custombboxparser.cpp  by creating the nvdsinfer_yolo_efficient_nms.cpp
 ################################################################################
 
 CC:= g++
@@ -35,8 +35,8 @@ CFLAGS+= -I/opt/nvidia/deepstream/deepstream/sources/includes \
 LIBS:= -lnvinfer -lnvparsers
 LFLAGS:= -Wl,--start-group $(LIBS) -Wl,--end-group
 
-SRCFILES:= nvdsinfer_yolov9_efficient_nms.cpp 
-TARGET_LIB:= libnvds_infer_yolov9_efficient_nms.so
+SRCFILES:= nvdsinfer_yolo_efficient_nms.cpp 
+TARGET_LIB:= libnvds_infer_yolo_efficient_nms.so
 
 all: $(TARGET_LIB)
 
