@@ -3,10 +3,10 @@
 This repository provides a custom implementation of parsing function to the [Gst-nvinferserver](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinferserver.html) plugin when use YOLOv7/YOLOv9 model served by Triton Server using the [Efficient NMS](https://github.com/NVIDIA/TensorRT/tree/master/plugin/efficientNMSPlugin) plugin exported by ONNX.
 
 
-By using the parsing function provided by `NvDsInferYolov7EfficientNMS` or `NvDsInferYolov9EfficientNMS`, handling the number of classes dynamically becomes easier. This eliminates the need to hardcode the number of classes, allowing the same plugin to be used for different YOLOv9 models with varying numbers of classes.
+By using the parsing function provided by `NvDsInferYoloEfficientNMS`, handling the number of classes dynamically becomes easier. This eliminates the need to hardcode the number of classes, allowing the same plugin to be used for different YOLOv9 models with varying numbers of classes.
 
-- Use parse function `NvDsInferYolov7EfficientNMS` for YOLOv7 Models
-- Use parse function `NvDsInferYolov9EfficientNMS` for YOLOv7 Models
+- Use parse function `NvDsInferYoloEfficientNMS` for YOLO Exported ONNX model with End2End
+
 
 # Deployment Guide for NvDsInferYoloEfficientNMS
 
@@ -40,13 +40,13 @@ Install Location:
 
 Usage on Deepstream
 
-Snippet [Gst-nvinferserver](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinferserver.html)  Configuration File for YOLOv9 Models
+Snippet [Gst-nvinferserver](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinferserver.html)  Configuration File for YOLO Models
 ```
   postprocess {
     labelfile_path: "labels.txt"
     detection {
       num_detected_classes: 80
-      custom_parse_bbox_func: "NvDsInferYolov9EfficientNMS"
+      custom_parse_bbox_func: "NvDsInferYoloEfficientNMS"
     }
   }
   custom_lib {
