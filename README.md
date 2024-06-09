@@ -1,5 +1,7 @@
 # NvDsInferYoloEfficientNMS for Gst-nvinferserver
 
+# This repo is being deprecated: Please use https://github.com/levipereira/nvdsinfer_yolo
+
 This repository provides a custom implementation of parsing function to the [Gst-nvinferserver](https://docs.nvidia.com/metropolis/deepstream/dev-guide/text/DS_plugin_gst-nvinferserver.html) plugin when use YOLOv7/YOLOv9 model served by Triton Server using the [Efficient NMS](https://github.com/NVIDIA/TensorRT/tree/master/plugin/efficientNMSPlugin) plugin exported by ONNX.
 
 
